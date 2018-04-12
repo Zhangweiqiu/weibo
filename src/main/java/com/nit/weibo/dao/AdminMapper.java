@@ -3,6 +3,8 @@ package com.nit.weibo.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.nit.weibo.dto.AdminLoginDto;
@@ -10,6 +12,7 @@ import com.nit.weibo.model.Admin;
 
 @Repository
 public interface AdminMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Admin record);

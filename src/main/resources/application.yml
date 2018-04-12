@@ -5,6 +5,13 @@ spring:
     username: root
     password: root
 mybatis: 
-  mapper-locations: classpath:com/nit/weibo/mapper/*.xml
-  type-aliases-package: classpath:com.nit.weibo.dao
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.nit.weibo.model
+
+  #pagehelper分页插件
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
     
