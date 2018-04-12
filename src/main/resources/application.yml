@@ -4,9 +4,7 @@ spring:
     url: jdbc:mysql://localhost:3306/xiaomi?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: root
-  jpa:
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: update
-    show-sql: true
+mybatis: 
+  mapper-locations: classpath:com/nit/weibo/mapper/*.xml
+  type-aliases-package: classpath:com.nit.weibo.dao
+    
