@@ -2,11 +2,8 @@ package com.nit.weibo.dao;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.nit.weibo.model.Weibo;
 
-@Repository
 public interface WeiboMapper {
     int deleteByPrimaryKey(Integer weiboId);
 

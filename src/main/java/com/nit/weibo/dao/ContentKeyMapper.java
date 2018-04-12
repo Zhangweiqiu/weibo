@@ -9,7 +9,7 @@ import com.nit.weibo.dto.ShenheDto;
 import com.nit.weibo.model.ContentKey;
 import com.nit.weibo.model.ContentKeyWithBLOBs;
 
-@Repository
+
 public interface ContentKeyMapper {
     int deleteByPrimaryKey(Integer contentKeyId);
 

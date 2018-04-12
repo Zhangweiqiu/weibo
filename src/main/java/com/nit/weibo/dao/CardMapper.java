@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nit.weibo.model.Card;
 
-@Repository
+
 public interface CardMapper {
     int deleteByPrimaryKey(Long id);
 

@@ -2,14 +2,12 @@ package com.nit.weibo.dao;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.nit.weibo.dto.PayDto;
 import com.nit.weibo.dto.TypeSDto;
 import com.nit.weibo.model.Pay;
 import com.nit.weibo.model.PayWithBLOBs;
 
-@Repository
+
 public interface PayMapper {
     int deleteByPrimaryKey(Integer id);
 

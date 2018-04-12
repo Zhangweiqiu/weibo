@@ -2,12 +2,9 @@ package com.nit.weibo.dao;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import com.nit.weibo.model.User;
 import com.nit.weibo.model.UserKey;
 
-@Repository
 public interface UserMapper {
     int deleteByPrimaryKey(UserKey key);
 

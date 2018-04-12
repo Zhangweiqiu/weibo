@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nit.weibo.model.Bill;
 
-@Repository
+
 public interface BillMapper {
     int deleteByPrimaryKey(Integer billId);
 
