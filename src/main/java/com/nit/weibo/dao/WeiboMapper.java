@@ -3,8 +3,9 @@ package com.nit.weibo.dao;
 import java.util.List;
 
 import com.nit.weibo.model.Weibo;
+import org.springframework.data.repository.CrudRepository;
 
-public interface WeiboMapper {
+public interface WeiboMapper extends CrudRepository<Weibo,Integer>{
     int deleteByPrimaryKey(Integer weiboId);
 
     int insert(Weibo record);

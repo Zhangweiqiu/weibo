@@ -2,7 +2,7 @@ package com.nit.weibo.dao;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.nit.weibo.dto.PinglunDto;
 import com.nit.weibo.dto.ShenheDto;
@@ -10,7 +10,7 @@ import com.nit.weibo.model.ContentKey;
 import com.nit.weibo.model.ContentKeyWithBLOBs;
 
 
-public interface ContentKeyMapper {
+public interface ContentKeyMapper extends CrudRepository<ContentKey,Integer>{
     int deleteByPrimaryKey(Integer contentKeyId);
 
     int insert(ContentKeyWithBLOBs record);

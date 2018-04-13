@@ -6,9 +6,10 @@ import com.nit.weibo.dto.PayDto;
 import com.nit.weibo.dto.TypeSDto;
 import com.nit.weibo.model.Pay;
 import com.nit.weibo.model.PayWithBLOBs;
+import org.springframework.data.repository.CrudRepository;
 
 
-public interface PayMapper {
+public interface PayMapper extends CrudRepository<Pay,Integer>{
     int deleteByPrimaryKey(Integer id);
 
     int insert(PayWithBLOBs record);

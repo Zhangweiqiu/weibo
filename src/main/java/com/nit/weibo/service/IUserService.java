@@ -3,13 +3,13 @@ package com.nit.weibo.service;
 import java.util.List;
 
 import com.nit.weibo.dto.DataTableDto;
-import com.nit.weibo.model.User;
+import com.nit.weibo.model.User_list;
 
 public interface IUserService {
 
 	public Integer getInfoCount(String search, Integer type) throws Exception;
 	
-	public List<User> getInfoDataTable(DataTableDto dataTableDto, Integer type) throws Exception;
+	public List<User_list> getInfoDataTable(DataTableDto dataTableDto, Integer type) throws Exception;
 
 	public Object editJifen(Integer userId, String jifen, String jifen2) throws Exception;
 

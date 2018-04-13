@@ -2,21 +2,22 @@ package com.nit.weibo.dao;
 
 import java.util.List;
 
-import com.nit.weibo.model.User;
+import com.nit.weibo.model.User_list;
 import com.nit.weibo.model.UserKey;
+import org.springframework.data.repository.CrudRepository;
 
-public interface UserMapper {
+public interface UserMapper extends CrudRepository<User_list,Integer>{
     int deleteByPrimaryKey(UserKey key);
 
-    int insert(User record);
+    int insert(User_list record);
 
-    int insertSelective(User record);
+    int insertSelective(User_list record);
 
-    User selectByPrimaryKey(UserKey key);
+    User_list selectByPrimaryKey(UserKey key);
 
-    int updateByPrimaryKeySelective(User record);
+    int updateByPrimaryKeySelective(User_list record);
 
-    int updateByPrimaryKey(User record);
+    int updateByPrimaryKey(User_list record);
 
 	Integer getCount();
 
@@ -34,16 +35,16 @@ public interface UserMapper {
 
 	Integer getCount2N(String search);
 
-	List<User> getDataTable();
+	List<User_list> getDataTable();
 
-	List<User> getDataTable2(String s);
+	List<User_list> getDataTable2(String s);
 	
-	List<User> getDataTableY();
+	List<User_list> getDataTableY();
 
-	List<User> getDataTable2Y(String s);
+	List<User_list> getDataTable2Y(String s);
 	
-	List<User> getDataTableN();
+	List<User_list> getDataTableN();
 
-	List<User> getDataTable2N(String s);
+	List<User_list> getDataTable2N(String s);
 
 }

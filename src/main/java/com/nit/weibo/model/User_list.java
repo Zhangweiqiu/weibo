@@ -1,8 +1,23 @@
 package com.nit.weibo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-public class User extends UserKey {
+
+@Entity
+public class User_list {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer userId;
+
+    @NotNull
+    private String openid;
+
     private String cname;
 
     private Integer new_member;
@@ -20,6 +35,22 @@ public class User extends UserKey {
     private Date clean_starttime;
 
     private Date clean_endtime;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
 
     public String getCname() {
         return cname;

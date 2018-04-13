@@ -1,54 +1,66 @@
 package com.nit.weibo.model;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class Bill {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer billId;
 
+    @NotNull
     private String payTime;
-
+    @NotNull
     private String publicId;
-
+    @NotNull
     private String bussinessNo;
-
+    @NotNull
     private String bussinessNox;
 
     private String machineNo;
-
+    @NotNull
     private String wxOrderId;
-
+    @NotNull
     private String shorderId;
-
+    @NotNull
     private String userType;
-
+    @NotNull
     private String tradeType;
-
+    @NotNull
     private String tradeStatus;
-
+    @NotNull
     private String bank;
-
+    @NotNull
     private String moneyType;
-
+    @NotNull
     private String totalMoney;
-
+    @NotNull
     private String redBoxNum;
-
+    @NotNull
     private String backOrderNo;
-
+    @NotNull
     private String busbackOrderNo;
-
+    @NotNull
     private String backMoneyNum;
-
+    @NotNull
     private String backredBoxNum;
-
+    @NotNull
     private String backType;
 
     private String backStatus;
-
+    @NotNull
     private String productName;
 
     private String datebag;
-
+    @NotNull
     private String shouxufei;
-
+    @NotNull
     private String feilv;
 
     public Integer getBillId() {

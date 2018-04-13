@@ -1,8 +1,9 @@
 package com.nit.weibo.dao;
 
 import com.nit.weibo.model.Cost;
+import org.springframework.data.repository.CrudRepository;
 
-public interface CostMapper {
+public interface CostMapper extends CrudRepository<Cost,Integer>{
     int deleteByPrimaryKey(Integer costId);
 
     int insert(Cost record);

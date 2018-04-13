@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.nit.weibo.dto.AjaxMsgDto;
 import com.nit.weibo.dto.DataTable4DisplayDto;
 import com.nit.weibo.dto.DataTableDto;
-import com.nit.weibo.model.User;
+import com.nit.weibo.model.User_list;
 import com.nit.weibo.service.IUserService;
 
 @Controller
@@ -39,7 +39,7 @@ public class UserController {
 		DataTable4DisplayDto result = null;
 		try {
 			Integer count = this.userService.getInfoCount(dataTableDto.getSearch(), type);
-			List<User> data = this.userService.getInfoDataTable(dataTableDto, type);
+			List<User_list> data = this.userService.getInfoDataTable(dataTableDto, type);
 			result=new DataTable4DisplayDto(dataTableDto.getDraw(), count, count, data);
 			logger.info(result);
 		} catch (Exception e) {

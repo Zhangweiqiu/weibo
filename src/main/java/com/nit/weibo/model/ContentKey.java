@@ -1,19 +1,53 @@
 package com.nit.weibo.model;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class ContentKey {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer contentKeyId;
 
     private Integer userId;
 
     private String keyword;
 
+    private System contentId;
+
+    @NotNull
     private Integer contentFu;
 
+    private String contentFuId;
+    @NotNull
     private Integer isFinish;
-
+    @NotNull
     private Integer zanNumber;
-
+    @NotNull
     private Integer isZanFinish;
+
+    public System getContentId() {
+        return contentId;
+    }
+
+    public void setContentId(System contentId) {
+        this.contentId = contentId;
+    }
+
+    public String getContentFuId() {
+        return contentFuId;
+    }
+
+    public void setContentFuId(String contentFuId) {
+        this.contentFuId = contentFuId;
+    }
+
+
 
     public Integer getContentKeyId() {
         return contentKeyId;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.nit.weibo.dao.CardMapper" >
-  <resultMap id="BaseResultMap" type="com.nit.weibo.model.Card" >
+  <resultMap id="BaseResultMap" type="com.nit.weibo.model.Card_list" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="cleankey" property="cleankey" jdbcType="VARCHAR" />
     <result column="is_used" property="is_used" jdbcType="INTEGER" />
@@ -23,7 +23,7 @@
     delete from card_list
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.nit.weibo.model.Card" >
+  <insert id="insert" parameterType="com.nit.weibo.model.Card_list" >
     <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -34,7 +34,7 @@
       #{getcard_time,jdbcType=TIMESTAMP}, #{use_time,jdbcType=TIMESTAMP}, #{end_time,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.nit.weibo.model.Card" >
+  <insert id="insertSelective" parameterType="com.nit.weibo.model.Card_list" >
     <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.nit.weibo.model.Card" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.nit.weibo.model.Card_list" >
     update card_list
     <set >
       <if test="cleankey != null" >
@@ -104,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.nit.weibo.model.Card" >
+  <update id="updateByPrimaryKey" parameterType="com.nit.weibo.model.Card_list" >
     update card_list
     set cleankey = #{cleankey,jdbcType=VARCHAR},
       is_used = #{is_used,jdbcType=INTEGER},

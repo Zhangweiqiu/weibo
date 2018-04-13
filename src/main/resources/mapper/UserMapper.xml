@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.nit.weibo.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.nit.weibo.model.User" >
+  <resultMap id="BaseResultMap" type="com.nit.weibo.model.User_list" >
     <id column="openid" property="openid" jdbcType="VARCHAR" />
     <id column="UserId" property="userId" jdbcType="INTEGER" />
     <result column="cname" property="cname" jdbcType="VARCHAR" />
@@ -83,7 +83,7 @@
     where openid = #{openid,jdbcType=VARCHAR}
       and UserId = #{userId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.nit.weibo.model.User" >
+  <insert id="insert" parameterType="com.nit.weibo.model.User_list" >
     <selectKey resultType="java.lang.Integer" keyProperty="userId" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -96,7 +96,7 @@
       #{cmoney,jdbcType=VARCHAR}, #{cleankey,jdbcType=VARCHAR}, #{clean_starttime,jdbcType=TIMESTAMP}, 
       #{clean_endtime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.nit.weibo.model.User" >
+  <insert id="insertSelective" parameterType="com.nit.weibo.model.User_list" >
     <selectKey resultType="java.lang.Integer" keyProperty="userId" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -166,7 +166,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.nit.weibo.model.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.nit.weibo.model.User_list" >
     update user_list
     <set >
       <if test="cname != null" >
@@ -214,7 +214,7 @@
     where UserId = #{1}
   </update>
 
-  <update id="updateByPrimaryKey" parameterType="com.nit.weibo.model.User" >
+  <update id="updateByPrimaryKey" parameterType="com.nit.weibo.model.User_list" >
     update user_list
     set cname = #{cname,jdbcType=VARCHAR},
       new_member = #{new_member,jdbcType=INTEGER},

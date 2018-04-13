@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.nit.weibo.dao.UserMapper;
 import com.nit.weibo.dto.DataTableDto;
-import com.nit.weibo.model.User;
+import com.nit.weibo.model.User_list;
 import com.nit.weibo.service.IUserService;
 
 @Service
@@ -49,7 +49,7 @@ public class UserService implements IUserService {
 	}
 	
 	@Override
-	public List<User> getInfoDataTable(DataTableDto dataTableDto, Integer type) throws Exception {
+	public List<User_list> getInfoDataTable(DataTableDto dataTableDto, Integer type) throws Exception {
 		String s=dataTableDto.getSearch();
 		Integer page = 0;
 		if(dataTableDto.length!=-1) {
@@ -58,7 +58,7 @@ public class UserService implements IUserService {
 			page = (dataTableDto.start / dataTableDto.length) + 1; //第几页
 			PageHelper.startPage(page, dataTableDto.length);
 		}
-		List<User> list=null;
+		List<User_list> list=null;
 		if(type == 0)
 		{
 			if(s==""){
@@ -92,7 +92,7 @@ public class UserService implements IUserService {
 
 	@Override
 	public Object editJifen(Integer userId, String openid, String jifen) throws Exception {
-		User record = new User();
+		User_list record = new User_list();
 		record.setUserId(userId);
 		record.setOpenid(openid);
 		record.setCmoney(jifen);
@@ -106,7 +106,7 @@ public class UserService implements IUserService {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
 	    Date date = sdf.parse(riqi); 
 	    
-		User record = new User();
+		User_list record = new User_list();
 		record.setUserId(userId);
 		record.setOpenid(openid);
 		record.setMember_endtime(date);

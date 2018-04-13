@@ -1,11 +1,11 @@
 package com.nit.weibo.dao;
 
-import org.springframework.stereotype.Repository;
 
 import com.nit.weibo.model.Bill;
+import org.springframework.data.repository.CrudRepository;
 
 
-public interface BillMapper {
+public interface BillMapper extends CrudRepository<Bill,Integer>{
     int deleteByPrimaryKey(Integer billId);
 
     int insert(Bill record);

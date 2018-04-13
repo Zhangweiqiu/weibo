@@ -1,6 +1,6 @@
 package com.nit.weibo.model;
 
-public class ContentKeyWithBLOBs extends ContentKey {
+public class ContentKeyWithBLOBs  {
     private String contentId;
 
     private String contentFuId;

@@ -1,20 +1,19 @@
 package com.nit.weibo.dao;
 
-import org.springframework.stereotype.Repository;
+import com.nit.weibo.model.Card_list;
+import org.springframework.data.repository.CrudRepository;
 
-import com.nit.weibo.model.Card;
 
-
-public interface CardMapper {
+public interface CardMapper extends CrudRepository<Card_list,Long>{
     int deleteByPrimaryKey(Long id);
 
-    int insert(Card record);
+    int insert(Card_list record);
 
-    int insertSelective(Card record);
+    int insertSelective(Card_list record);
 
-    Card selectByPrimaryKey(Long id);
+    Card_list selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(Card record);
+    int updateByPrimaryKeySelective(Card_list record);
 
-    int updateByPrimaryKey(Card record);
+    int updateByPrimaryKey(Card_list record);
 }

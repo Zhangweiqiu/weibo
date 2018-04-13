@@ -1,6 +1,17 @@
 package com.nit.weibo.model;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class Weibo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer weiboId;
 
     private Integer userId;
@@ -11,8 +22,11 @@ public class Weibo {
 
     private Integer isMain;
 
+    @NotNull
     private Integer isFinish;
 
+
+    @NotNull
     private Integer FUhaoNumber;
 
     public Integer getWeiboId() {

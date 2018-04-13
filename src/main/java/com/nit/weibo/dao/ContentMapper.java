@@ -1,13 +1,10 @@
 package com.nit.weibo.dao;
 
-import java.util.List;
-
-
-
 import com.nit.weibo.model.Content;
+import org.springframework.data.repository.CrudRepository;
 
 
-public interface ContentMapper {
+public interface ContentMapper extends CrudRepository<Content,Integer>{
     int deleteByPrimaryKey(Integer contentId);
 
     int insert(Content record);
